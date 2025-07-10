@@ -145,23 +145,3 @@ window.addEventListener("load", () => {
   
   // Activer ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);  
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  // 🌀 Portail final — retour en haut
-  const returnTopBtn = document.getElementById("return-top");
-  if (returnTopBtn) {
-    returnTopBtn.addEventListener("click", () => {
-      gsap.to("body", {
-        duration: 0.8,
-        opacity: 0,
-        scale: 0.95,
-        ease: "power2.inOut",
-        onComplete: () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          location.reload(); // Redémarre le portail d'entrée
-        }
-      });
-    });
-  }
-});
