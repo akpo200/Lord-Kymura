@@ -145,3 +145,30 @@ window.addEventListener("load", () => {
   
   // Activer ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);  
+
+
+// 🌸 Génération de pétales
+const petalContainer = document.querySelector(".petal-container");
+for (let i = 0; i < 30; i++) {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.animationDuration = 5 + Math.random() * 5 + "s";
+  petal.style.animationDelay = Math.random() * 5 + "s";
+  petalContainer.appendChild(petal);
+}
+
+// 🌀 Portail final — retour en haut
+document.getElementById("return-top").addEventListener("click", () => {
+  // Animation rapide de vortex
+  gsap.to("body", {
+    duration: 0.8,
+    opacity: 0,
+    scale: 0.9,
+    ease: "power2.inOut",
+    onComplete: () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      location.reload(); // Recharge la page pour relancer l'entrée
+    }
+  });
+});
