@@ -1,0 +1,300 @@
+/* style.css */
+
+/* === BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02), transparent 70%),
+                repeating-linear-gradient(45deg, rgba(0,255,238,0.05) 0 1px, transparent 1px 4px);
+    animation: bgMove 20s linear infinite;
+  }
+  
+  @keyframes bgMove {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 1000px 0, 400px 400px; }
+  }
+  
+  h2, h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* === LOADER === */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    color: #00ffee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .scan-line {
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00ffee, transparent);
+    animation: scan 2s infinite;
+  }
+  
+  @keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* === INTRO === */
+  #intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #0a0a0a;
+  }
+  
+  #intro h1 span {
+    color: #00ffee;
+    text-shadow: 0 0 10px #00ffee;
+  }
+  
+  .buttons {
+    margin-top: 2rem;
+  }
+  
+  .buttons button {
+    margin: 0 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ffee;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .buttons button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ffeeaa;
+  }
+  
+  /* === HERO === */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #0f0f2e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+  
+  .portrait {
+    margin-top: 2rem;
+    width: 220px;
+    height: 220px;
+    background: url('image-1-annael.png') center/cover no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #00ffeeaa, 0 0 60px #00224488;
+    animation: scaleIn 1.5s ease forwards;
+  }
+  
+  @keyframes scaleIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* === ANNAEL Section === */
+  #annael-section {
+    background: linear-gradient(120deg, #080818, #1a0033);
+    padding: 4rem 2rem;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 110px;
+    height: 110px;
+    background: #111;
+    border: 2px solid #00ffee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 1.7rem;
+    box-shadow: 0 0 10px #00ffee55;
+    backdrop-filter: blur(2px);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .card span {
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #00ffeecc;
+    background: #1a1a1a;
+  }
+  
+  /* === GALERIE === */
+  #gallery {
+    padding: 4rem 2rem;
+    background: #111122;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,255,238,0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  /* === FAVORITES === */
+  #favorites {
+    background: linear-gradient(145deg, #0d0022, #222244);
+    padding: 4rem 2rem;
+  }
+  
+  .favorites-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .fav-card {
+    background: #1a1a1a;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #00ffee99;
+    box-shadow: 0 0 10px #00ffee44;
+    transition: transform 0.3s;
+  }
+  
+  .fav-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffee;
+  }
+  
+  /* === MESSAGE === */
+  #message {
+    padding: 4rem 2rem;
+    background: #0a0a0a;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .typed-message {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* === TIKTOK === */
+  #tiktok {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #111;
+  }
+  
+  .tiktok-btn {
+    background: #00ffee22;
+    padding: 1rem 2rem;
+    color: #00ffee;
+    border: 1px solid #00ffee;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .tiktok-btn:hover {
+    background: #00ffee;
+    color: #000;
+    box-shadow: 0 0 15px #00ffee;
+  }
+  
+  /* === MUSIQUE === */
+  #music-control {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+  }
+  
+  #music-toggle {
+    background: rgba(0, 255, 238, 0.12);
+    border: 2px solid #00ffee;
+    color: #00ffee;
+    font-size: 1.4rem;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #music-toggle:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #00ffeecc;
+  }
+  
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .portrait {
+      width: 160px;
+      height: 160px;
+    }
+  
+    .card {
+      width: 90px;
+      height: 90px;
+    }
+  
+    #music-toggle {
+      font-size: 1.2rem;
+      padding: 8px 10px;
+    }
+  }
+  

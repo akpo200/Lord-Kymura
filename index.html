@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lord Kymura Annael</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="scan-line"></div>
+    <p>Chargement de l'univers...</p>
+  </div>
+
+  <!-- Écran d'intro -->
+  <section id="intro" class="full-screen">
+    <h1>Voulez-vous entrer dans l’univers de <span>Lord Kymura Annael</span> ?</h1>
+    <div class="buttons">
+      <button id="enter-btn">OUI</button>
+      <button id="nope-btn">NON</button>
+    </div>
+  </section>
+
+  <!-- Site principal -->
+  <div id="main-site" style="display: none">
+    <!-- Hero -->
+    <section id="hero" class="flame">
+        <h2>Bienvenue dans l’univers d’Annael</h2>
+      <div class="portrait"></div>
+    </section>
+
+    <!-- A.N.N.A.E.L -->
+    <section id="annael-section">
+      <div class="cards">
+        <div class="card">A<br><span>Atypique</span></div>
+        <div class="card">N<br><span>Naturelle</span></div>
+        <div class="card">N<br><span>Nuancée</span></div>
+        <div class="card">A<br><span>Attachante</span></div>
+        <div class="card">E<br><span>Épatante</span></div>
+        <div class="card">L<br><span>Lumineuse</span></div>
+      </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="gallery">
+      <h3>Annael Dimiline aka Lord Kymura</h3>
+      <div class="gallery-grid">
+        <img src="image-2-annael.jpg" alt="Annael" />
+        <img src="image-1-annael.jpg" alt="Lord" />
+        <img src="image-4-annael.jpg" alt="Kym" />
+      </div>
+    </section>
+
+    <!-- Univers préférés -->
+    <section id="favorites">
+      <h3>Ses univers préférés</h3>
+      <div class="favorites-grid">
+        <div class="fav-card">Les Mangas</div>
+        <div class="fav-card">La culture</div>
+        <div class="fav-card">Les Cosplays</div>
+        <div class="fav-card">Les Edits Vidéos</div>
+        <div class="fav-card">La K-POP</div>
+        <div class="fav-card">L'art</div>
+      </div>
+    </section>
+
+    <!-- Message d'anniversaire -->
+    <section id="message">
+      <div class="typed-message" id="birthday-message"></div>
+    </section>
+
+    <!-- TikTok -->
+    <section id="tiktok">
+      <a href="https://www.tiktok.com/@lord_kymura" target="" class="tiktok-btn">Découvre-la sur TikTok</a>
+    </section>
+
+    <!-- Contrôle musique -->
+    <div id="music-control">
+      <button id="music-toggle">🔊</button>
+    </div>
+  </div>
+
+  <!-- Musique de fond -->
+  <audio id="bg-music" src="theme-annael.mp3" loop preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+<div>
+  <p>&copy; Par ses amis. Tous droits réservés.</p>
+</div>
+</body>
+</html>
